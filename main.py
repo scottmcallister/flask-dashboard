@@ -63,6 +63,14 @@ def index():
                            known=session.get('known', False))
 
 
+@app.route('/known', methods=['GET'])
+def loggedIn():
+    if session['known']:
+        return "ok"
+    else:
+        return "not ok"
+
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template('404.html'), 404
