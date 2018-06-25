@@ -110,3 +110,4 @@ venv.bak/
 .vscode/
 
 .DS_Store
+react-app/node_modules/
