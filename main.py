@@ -63,12 +63,14 @@ def index():
                            known=session.get('known', False))
 
 
-@app.route('/known', methods=['GET'])
+@app.route('/dashboard', methods=['GET'])
 def loggedIn():
     if session['known']:
-        return "ok"
+        print('known')
+        return render_template('dashboard.html')
     else:
-        return "not ok"
+        print('unknown')
+        return redirect(url_for('index'))
 
 
 @app.errorhandler(404)
